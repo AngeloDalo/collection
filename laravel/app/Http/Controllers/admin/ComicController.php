@@ -17,10 +17,7 @@ class ComicController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->roles()->get()->contains('1')) {
-            // order posts and paginate
-            $comics = Comic::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(20);
-        } 
+        $comics = Comic::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(20);
         return view('admin.comics.index', ['comics' => $comics]);
     }
 

@@ -35,12 +35,6 @@
                       <i class="fas fa-plus"></i> <br> add Comic
                     </a>
                   </li>
-                  <li>
-                    <a class="nav-link py-3 border-bottom" href="{{ route('admin.comics.indexUser') }}">
-                        <i class="bi bi-files"></i> <br>
-                        My Comic
-                    </a>
-                  </li>
                 </ul>
                 <div class="dropdown border-top">
                   <a href="#" class="d-flex align-items-center justify-content-center p-3 link-dark text-decoration-none dropdown-toggle" id="dropdownUser3" data-bs-toggle="dropdown" aria-expanded="false">

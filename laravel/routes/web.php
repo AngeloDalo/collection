@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ Route::get('/home', function () {
+     return view('admin.home');
+ });
 Auth::routes();
 
 Route::middleware('auth')
@@ -19,16 +22,11 @@ Route::middleware('auth')
     ->name('admin.') //name
     ->prefix('admin') //uri
     ->group(function () {
-        Route::get('/', 'HomeController@index')->name('home');
-        //Route::get('/mycomics', 'ComicController@indexUser')->name('posts.indexUser');
         Route::resource('comics', 'ComicController');
     });
-
 
 Route::get('{any?}', function ($name = null) {
     return view('guest.welcome');
 })->where('any', '.*');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
