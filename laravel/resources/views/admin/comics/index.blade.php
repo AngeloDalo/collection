@@ -31,25 +31,25 @@
                 </thead>
                 <tbody>
                     @foreach ($comics as $comic)
-                        <tr>
-                            <td>{{ $comic->nome }}</td>
-                            <td>{{ $comic->usciti }}</td>
-                            <td>{{ $comic->comprati }}</td>
-                            <td>{{ $comic->letti }}</td>
-                            <td>{{ $comic->finito }}</td>
-                            <td>{{ $comic->updated_at }}</td>
-                            <td><a class="btn btn-primary" href="{{ route('admin.comics.show', $comic->slug) }}">View</a></td>
-                            <td>
-                                <a class="btn btn-primary" href="{{ route('admin.comics.edit', $comic->slug) }}">Update</a>
-                            </td>
-                            <td>
-                                <form action="{{ route('admin.comics.destroy', $comic) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input class="btn btn-danger" type="submit" value="Delete">
-                                </form>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td>{{ $comic->nome }}</td>
+                                <td>{{ $comic->usciti }}</td>
+                                <td>{{ $comic->comprati }}</td>
+                                <td>{{ $comic->letti }}</td>
+                                <td>{{ $comic->finito }}</td>
+                                <td>{{ $comic->updated_at }}</td>
+                                <td><a class="btn btn-primary" href="{{ route('admin.comics.show', $comic->slug) }}">View</a></td>
+                                <td>
+                                    <a class="btn btn-primary" href="{{ route('admin.comics.edit', $comic->slug) }}">Update</a>
+                                </td>
+                                <td>
+                                    <form action="{{ route('admin.comics.destroy', $comic) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input class="btn btn-danger" type="submit" value="Delete">
+                                    </form>
+                                </td>
+                            </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
