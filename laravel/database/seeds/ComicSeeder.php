@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 use App\Model\Comic;
+use App\User;
 
 class ComicSeeder extends Seeder
 {
@@ -191,6 +192,7 @@ class ComicSeeder extends Seeder
             $newComic->image = $comic['image'];
             $nome = "$newComic->nome-$i";
             $newComic->slug = Str::slug($nome, '-');
+            $newComic->user_id = User::inRandomOrder()->first()->id;
             $newComic->fill($comic);
             $newComic->save();
             $i=$i+1;

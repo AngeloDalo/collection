@@ -1,9 +1,12 @@
 <?php
-
-namespace App\Http\Controllers;
-
-use App\Comic;
+namespace App\Http\Controllers\Admin;
+use App\Model\Comic;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Prophecy\Call\Call;
 
 class ComicController extends Controller
 {
@@ -14,7 +17,11 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        if (Auth::user()->roles()->get()->contains('1')) {
+            // order posts and paginate
+            $comics = Comic::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(20);
+        } 
+        return view('admin.comics.index', ['comics' => $comics]);
     }
 
     /**

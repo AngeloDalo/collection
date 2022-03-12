@@ -27,8 +27,8 @@
                     @endif
                 @else
                     <li class="nav-item dropdown d-flex">
-                        <a class="nav-link" href="{{ route('admin.posts.index') }}">All Comics</a>
-                        <a class="nav-link" href="{{ route('admin.posts.create') }}">Add Comic</a>
+                        <a class="nav-link" href="{{ route('admin.comics.index') }}">All Comics</a>
+                        <a class="nav-link" href="{{ route('admin.comics.create') }}">Add Comic</a>
                         {{-- logout con input button --}}
                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf

@@ -16,9 +16,16 @@ class Comic extends Model
         'costo_totale',
         'image',
         'slug',
+        'user_id',
         'created_at',
         'updated_at',
     ];
+
+    //1 to *
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
     public function getRouteKeyName()
     {
