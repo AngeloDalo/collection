@@ -36,12 +36,12 @@ class Comic extends Model
     {
         $slug = Str::slug($nome, '-');
 
-        $oldPost = Post::where('slug', $slug)->first();
+        $oldComic = Comic::where('slug', $slug)->first();
 
         $counter = 0;
-        while ($oldPost) {
+        while ($oldComic) {
             $newSlug = $slug . '-' . $counter;
-            $oldPost = Comic::where('slug', $newSlug)->first();
+            $oldComic = Comic::where('slug', $newSlug)->first();
             $counter++;
         }
 

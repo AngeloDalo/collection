@@ -21411,3 +21411,36 @@ fieldset:disabled .btn {
   }
 }
 
+.container-welcome {
+  background-color: blue;
+}
+
+.nav-link:hover {
+  color: blue !important;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+ul li a:hover {
+  color: blue !important;
+}
+
+.container .row .col h1,
+.container .row .col .h1 {
+  text-transform: uppercase;
+}
+
+.container .row .col span {
+  font-size: 1.3em;
+}
+
+.container-show .col img {
+  width: 200px;
+}
+
